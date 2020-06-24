@@ -20,7 +20,7 @@ The project also contains a [cloud formation template](deployment/sagemaker-grap
 
 The project architecture deployed by the cloud formation template is shown here.
 
-![](https://github.com/bauregan/sagemaker-graph-fraud-detection/blob/adesojia-bauregan-fork/deployment/arch.png)
+![](http://sagemaker-solutions-us-west-2.s3.amazonaws.com/Fraud-detection-in-financial-networks/deployment/arch.png)
 
 ## Contents
 
