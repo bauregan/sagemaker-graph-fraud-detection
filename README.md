@@ -20,41 +20,10 @@ The project also contains a [cloud formation template](deployment/sagemaker-grap
 
 The project architecture deployed by the cloud formation template is shown here.
 
-![](http://sagemaker-solutions-us-west-2.s3.amazonaws.com/Fraud-detection-in-financial-networks/deployment/arch.png)
 
-## Contents
-
-* `deployment/`
-  * `sagemaker-graph-fraud-detection.yaml`: Creates AWS CloudFormation Stack for solution
-* `source/`
-  * `lambda/`
-    * `data-preprocessing/`
-      * `index.py`: Lambda function script for invoking SageMaker processing
-    * `graph-modelling/` 
-      * `index.py`: Lambda function script for invoking SageMaker training
-  * `sagemaker/`
-    * `baselines/`
-      * `graph-fraud-baseline.ipynb`:  Jupyter notebook for a baseline method using just the graph structure
-      * `mlp-fraud-baseline.ipynb`:  Jupyter notebook for feature based MLP baseline method using SageMaker and MXNet
-      * `mlp_fraud_entry_point.py`: python entry point used by the MLP baseline notebook for MXNet training/deployment
-      * `xgboost-fraud-entry-point.ipynb`: Jupyter notebook for feature based XGBoost baseline method using SageMaker
-    * `data-preprocessing/`
-      * `container/`
-        * `Dockerfile`: Describes custom Docker image hosted on Amazon ECR for SageMaker Processing
-        * `build_and_push.sh`: Script to build Docker image and push to Amazon ECR
-      * `graph_data_preprocessor.py`: Custom script used by SageMaker Processing for data processing/feature engineering
-    * `dgl-fraud-detection/`
-      * `model`
-        *  `__init__.py`: treat containing model directory as a package
-        *  `mxnet.py`: Implements the various graph neural network models used in the project with the mxnet backend
-      * `data.py`: Contains functions for reading node features and labels
-      * `estimator_fns.py`: Contains functions for parsing input from SageMaker estimator objects
-      * `graph.py`: Contains functions for constructing DGL Graphs with node features and edge lists
-      * `requirements.txt`: Describes Python package requirements of the Amazon SageMaker training instance
-      * `sampler.py`: Contains functions for graph sampling for mini-batch training
-      * `train_dgl_mxnet_entry_point.py`: python entry point used by the notebook for GNN training with DGL mxnet backend
-      * `utils.py`: python script with utility functions for computing metrics and plots
-    * `dgl-fraud-detection.ipynb`: Orchestrates the solution. Triggers preprocessing and model training
+<p align="center">
+  <img src="http://sagemaker-solutions-us-west-2.s3.amazonaws.com/Fraud-detection-in-financial-networks/deployment/arch.png" width="100%">
+</p>
 
 ## License
 
